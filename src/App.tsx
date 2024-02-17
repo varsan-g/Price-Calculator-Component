@@ -110,66 +110,66 @@ const App: React.FC = () => {
   };
 
   const typeOptions = [
-    { label: 'Ecommerce / Online shop', value: 'Ecommerce / Online shop', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-1.png' },
-    { label: 'Website with blog', value: 'Blog', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-2.png' },
-    { label: 'Website for business/corporate', value: 'Business', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-3.png' },
-    { label: 'Customised website', value: 'Custom website', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-4.png' },
+    { label: 'Ecommerce / Online shop', value: 'Ecommerce / Online shop', price: 3000, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-1.png' },
+    { label: 'Website with blog', value: 'Blog', price: 1000, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-2.png' },
+    { label: 'Website for business/corporate', value: 'Business', price: 1750, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-3.png' },
+    { label: 'Customised website', value: 'Custom website', price: 5000, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-4.png' },
   ];
 
   const designOptions = [
-    { label: 'Use a template', value: 'Template', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-1.png' },
-    { label: 'Customised design', value: 'Custom design', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-2.png' },
-    { label: 'I don\'t require design', value: 'No design', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-3.png' },
-    { label: 'I don\'t know', value: 'Idk', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-4.png' },
+    { label: 'Use a template', value: 'Template', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-1.png' },
+    { label: 'Customised design', value: 'Custom design', price: 1500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-2.png' },
+    { label: 'I don\'t require design', value: 'No design', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-3.png' },
+    { label: 'I don\'t know', value: 'Idk', price: 350, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-4.png' },
   ];
 
   const sizeOptions = [
-    { label: 'Small: less than 3 pages/50 products', value: 'Small', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-1.png' },
-    { label: 'Medium: less than 10 pages/200 products', value: 'Medium', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-2.png' },
-    { label: 'Large: more than 10 pages/200 products', value: 'Large', price: 300, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-3.png' },
-    { label: 'I don\'t know', value: 'Unknown Size', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-4.png' },
+    { label: 'Small: less than 3 pages/50 products', value: 'Small', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-1.png' },
+    { label: 'Medium: less than 10 pages/200 products', value: 'Medium', price: 750, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-2.png' },
+    { label: 'Large: more than 10 pages/200 products', value: 'Large', price: 1500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Size', price: 350, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-4.png' },
   ];
 
   const paymentOptions = [
-    { label: 'Yes', value: 'Yes', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-1.png' },
+    { label: 'Yes', value: 'Yes', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-1.png' },
     { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Payment', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Payment', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-3.png' },
   ];
 
   const integrationOptions = [
-    { label: 'Yes', value: 'Yes', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-1.png' },
+    { label: 'Yes', value: 'Yes', price: 2500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-1.png' },
     { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Integration', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Integration', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-3.png' },
   ];
 
   const loginOptions = [
-    { label: 'Yes', value: 'Yes', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-1.png' },
+    { label: 'Yes', value: 'Yes', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-1.png' },
     { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Login', price: 50, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Login', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-3.png' },
   ];
 
   const multilingualOptions = [
-    { label: 'Yes', value: 'Yes', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-1.png' },
+    { label: 'Yes', value: 'Yes', price: 1000, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-1.png' },
     { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Multilingual', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Multilingual', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-3.png' },
   ];
 
   const searchOptions = [
-    { label: 'Yes', value: 'Yes', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-1.png' },
+    { label: 'Yes', value: 'Yes', price: 350, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-1.png' },
     { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Search', price: 75, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Search', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-3.png' },
   ];
 
   const seoOptions = [
-    { label: 'Yes', value: 'Yes', price: 300, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-1.png' },
+    { label: 'Yes', value: 'Yes', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-1.png' },
     { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-2.png' },
-    { label: 'I don\'t know', value: 'Unknown SEO', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-3.png' },
+    { label: 'I don\'t know', value: 'Unknown SEO', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-3.png' },
   ];
 
   const stageOptions = [
-    { label: 'It\'s just an idea', value: 'Idea', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'I have some sketches', value: 'Sketches', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-2.png' },
-    { label: 'It\'s in development', value: 'Development', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-3.png' },
+    { label: 'It\'s just an idea', value: 'Idea', price: 350, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'I have some sketches', value: 'Sketches', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-2.png' },
+    { label: 'It\'s in development', value: 'Development', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-3.png' },
     { label: 'It\'s already created', value: 'Created', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-4.png' },
   ];
 
