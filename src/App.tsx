@@ -41,14 +41,6 @@ const App: React.FC = () => {
     return stepOrder.indexOf(step) + 1;
   };
 
-  const handleGoBack = () => {
-    const stepOrder: Step[] = ['type', 'design', 'size', 'payment', 'integration', 'login', 'multilingual', 'search', 'seo', 'stage'];
-    const currentStepIndex = stepOrder.indexOf(step);
-    if (currentStepIndex > 0) {
-      // Set the step to the previous one in the stepOrder array
-      setStep(stepOrder[currentStepIndex - 1]);
-    }
-  };
 
   const handleTypeSelect = (type: string, price: number) => {
     setSelection({ ...selection, type });
@@ -118,63 +110,67 @@ const App: React.FC = () => {
   };
 
   const typeOptions = [
-    { label: 'A. Ecommerce / Online shop', value: 'Ecommerce / Online shop', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    // ... (Include all other type options here)
+    { label: 'Ecommerce / Online shop', value: 'Ecommerce / Online shop', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-1.png' },
+    { label: 'Website with blog', value: 'Blog', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-2.png' },
+    { label: 'Website for business/corporate', value: 'Business', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-3.png' },
+    { label: 'Customised website', value: 'Custom website', price: 500, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-1-4.png' },
   ];
 
   const designOptions = [
-    { label: 'A. Use a template', value: 'Use a template', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    // ... (Include all other design options here)
+    { label: 'Use a template', value: 'Template', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-1.png' },
+    { label: 'Customised design', value: 'Custom design', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-2.png' },
+    { label: 'I don\'t require design', value: 'No design', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-3.png' },
+    { label: 'I don\'t know', value: 'Idk', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-2-4.png' },
   ];
 
   const sizeOptions = [
-    { label: 'A. Small: less than 3 pages/50 products', value: 'Small', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. Medium: less than 10 pages/200 products', value: 'Medium', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. Large: more than 10 pages/200 products', value: 'Large', price: 300, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'D. I don\'t know', value: 'Unknown Size', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Small: less than 3 pages/50 products', value: 'Small', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-1.png' },
+    { label: 'Medium: less than 10 pages/200 products', value: 'Medium', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-2.png' },
+    { label: 'Large: more than 10 pages/200 products', value: 'Large', price: 300, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-3.png' },
+    { label: 'I don\'t know', value: 'Unknown Size', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-3-4.png' },
   ];
 
   const paymentOptions = [
-    { label: 'A. Yes', value: 'Yes', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. I don\'t know', value: 'Unknown Payment', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Yes', value: 'Yes', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-1.png' },
+    { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-2.png' },
+    { label: 'I don\'t know', value: 'Unknown Payment', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-4-3.png' },
   ];
 
   const integrationOptions = [
-    { label: 'A. Yes', value: 'Yes', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. I don\'t know', value: 'Unknown Integration', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Yes', value: 'Yes', price: 250, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-1.png' },
+    { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-2.png' },
+    { label: 'I don\'t know', value: 'Unknown Integration', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-5-3.png' },
   ];
 
   const loginOptions = [
-    { label: 'A. Yes', value: 'Yes', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. I don\'t know', value: 'Unknown Login', price: 50, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Yes', value: 'Yes', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-1.png' },
+    { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-2.png' },
+    { label: 'I don\'t know', value: 'Unknown Login', price: 50, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-6-3.png' },
   ];
 
   const multilingualOptions = [
-    { label: 'A. Yes', value: 'Yes', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. I don\'t know', value: 'Unknown Multilingual', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Yes', value: 'Yes', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-1.png' },
+    { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-2.png' },
+    { label: 'I don\'t know', value: 'Unknown Multilingual', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-3.png' },
   ];
 
   const searchOptions = [
-    { label: 'A. Yes', value: 'Yes', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. I don\'t know', value: 'Unknown Search', price: 75, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Yes', value: 'Yes', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-1.png' },
+    { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-2.png' },
+    { label: 'I don\'t know', value: 'Unknown Search', price: 75, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-3.png' },
   ];
 
   const seoOptions = [
-    { label: 'A. Yes', value: 'Yes', price: 300, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. I don\'t know', value: 'Unknown SEO', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Yes', value: 'Yes', price: 300, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-1.png' },
+    { label: 'No', value: 'No', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-2.png' },
+    { label: 'I don\'t know', value: 'Unknown SEO', price: 150, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-3.png' },
   ];
 
   const stageOptions = [
-    { label: 'A. It\'s just an idea', value: 'Idea', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'B. I have some sketches', value: 'Sketches', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'C. It\'s in development', value: 'Development', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'D. It\'s already created', value: 'Created', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'It\'s just an idea', value: 'Idea', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'I have some sketches', value: 'Sketches', price: 100, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-2.png' },
+    { label: 'It\'s in development', value: 'Development', price: 200, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-3.png' },
+    { label: 'It\'s already created', value: 'Created', price: 0, image: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-4.png' },
   ];
 
   const renderCurrentStep = () => {
@@ -210,10 +206,10 @@ const App: React.FC = () => {
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="bg-white p-6 rounded shadow-lg text-center w-1/2 flex-col items-center">
         {/* Progress Indicator */}
-        <div className="mb-4">
+        <div className="mb-14 mt-2">
           {step !== 'summary' && (
-            <p className="text-sm font-medium">
-              Step {getCurrentStepNumber()}/{totalSteps}
+            <p className="text-m font-bold">
+              {getCurrentStepNumber()}/{totalSteps}
             </p>
           )}
         </div>

@@ -9,7 +9,7 @@ interface OptionSelectionProps {
 const OptionSelection: React.FC<OptionSelectionProps> = ({ title, options, onSelect }) => {
     return (
         <div>
-            <h2 className="text-xl font-semibold mb-4">{title}</h2>
+            <h1 className="text-2xl font-bold mt-16 mb-24">{title}</h1>
             <div className="flex justify-center flex-wrap">
                 {options.map((option) => (
                     <div
@@ -20,7 +20,7 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, options, onSel
                     >
                         <div className="h-48 bg-white rounded flex flex-col items-center justify-center shadow-md cursor-pointer hover:bg-gray-100 text-center p-4">
                             <img src={option.image} alt={option.label} className="h-32 w-32 object-cover mb-2" />
-                            <p className="text-sm font-semibold truncate">{option.label}</p>
+                            <p className="text-lg font-regular truncate">{option.label}</p>
                         </div>
                     </div>
                 ))}

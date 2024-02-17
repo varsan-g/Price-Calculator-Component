@@ -20,8 +20,8 @@ interface SummaryProps {
 const Summary: React.FC<SummaryProps> = ({ selection, total, onReset }) => {
     return (
         <div>
-            <p className="font-bold mb-4">Total cost: {total} kr.</p>
-            <h2 className="text-xl font-semibold mb-4">Summary</h2>
+            <h1 className="font-bold mb-24 mt-24 text-4xl">Total estimated cost: {total} kr.</h1>
+            <h2 className="text-xl font-bold mb-8">Summary</h2>
             <p className="mb-2">Type of website: {selection.type}</p>
             <p className="mb-2">Design preference: {selection.design}</p>
             <p className="mb-2">Size of the website: {selection.size}</p>
@@ -32,7 +32,7 @@ const Summary: React.FC<SummaryProps> = ({ selection, total, onReset }) => {
             <p className="mb-2">Internal search required: {selection.search}</p>
             <p className="mb-2">SEO services needed: {selection.seo}</p>
             <p className="mb-2">Website stage: {selection.stage}</p>
-            <button className="p-2 bg-red-500 text-white rounded hover:bg-red-600" onClick={onReset}>Start Over</button>
+            <button className="p-2 mt-10 mb-10 w-44 rounded-full shadow-lg bg-blue-500 text-white hover:bg-blue-600" onClick={onReset}>Reset</button>
         </div>
     );
 };
