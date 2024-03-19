@@ -20,7 +20,7 @@ interface SummaryProps {
 const Summary: React.FC<SummaryProps> = ({ selection, total, onReset }) => {
     return (
         <div>
-            <h1 className="font-bold mb-24 mt-24 text-4xl ">Total estimeret pris: {total} kr</h1>
+            <h1 className="font-bold mb-24 mt-4 text-4xl ">Total estimeret pris: {total} kr</h1>
             <h2 className="text-2xl font-bold mb-8">Summary</h2>
             <p className="mb-2">Type af hjemmeside: {selection.type}</p>
             <p className="mb-2">Design preference: {selection.design}</p>

@@ -11,3 +11,7 @@
 .hover-gradient:hover {
     background-image: radial-gradient(circle at center, #04133c, #052162);
 }
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+}
