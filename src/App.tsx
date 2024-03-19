@@ -209,7 +209,7 @@ const App: React.FC = () => {
         {/* Progress Indicator */}
         <div className="mb-14 mt-2">
           {step !== 'summary' && (
-            <p className="text-3xl font-semibold">
+            <p className="text-xl font-semibold">
               {getCurrentStepNumber()}/{totalSteps}
             </p>
           )}
