@@ -204,7 +204,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen text-white" style={{ backgroundColor: '#090909' }}>
+    <div className="flex items-start justify-center h-screen text-white pt-4" style={{ backgroundColor: '#090909' }}>
       <div className="p-32 rounded shadow-lg text-center w-3/4 flex-col items-center" style={{ backgroundColor: '#090909' }}>
         {/* Progress Indicator */}
         <div className="mb-14 mt-2">
