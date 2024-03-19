@@ -111,91 +111,91 @@ const App: React.FC = () => {
   };
 
   const typeOptions = [
-    { label: 'Ecommerce / Online shop', value: 'Ecommerce / Online shop', price: 3000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
-    { label: 'Website with blog', value: 'Blog', price: 1000, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
-    { label: 'Website for business/corporate', value: 'Business', price: 1750, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
-    { label: 'Customised website', value: 'Custom website', price: 5000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
+    { label: 'Ecommerce / Webshop', value: 'Ecommerce / Webshop', price: 3000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
+    { label: 'Hjemmeside med blog', value: 'Blog', price: 1000, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
+    { label: 'Hjemmeside til erhverv', value: 'Business', price: 1750, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
+    { label: 'Custom hjemmeside', value: 'Custom website', price: 5000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
   ];
 
   const designOptions = [
-    { label: 'Use a template', value: 'Template', price: 500, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
-    { label: 'Customised design', value: 'Custom design', price: 1500, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
-    { label: 'I don\'t require design', value: 'No design', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'I don\'t know', value: 'Idk', price: 350, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Brug en skabelon', value: 'Template', price: 500, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
+    { label: 'Custom design', value: 'Custom design', price: 1500, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
+    { label: 'Jeg har ikke brug for design', value: 'Nej design', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Jeg ved det ikke', value: 'Idk', price: 350, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
   ];
 
   const sizeOptions = [
-    { label: 'Small: less than 3 pages/50 products', value: 'Small', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Medium: less than 10 pages/200 products', value: 'Medium', price: 750, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Large: more than 10 pages/200 products', value: 'Large', price: 1500, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'I don\'t know', value: 'Unknown Size', price: 350, lordicon: 'https://cdn.lordicon.com/rjpgjson.json' },
+    { label: 'Lille: mindre end 3 undersider/50 produkter', value: 'Small', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Mellem: mindre end 10 undersider/200 produkter', value: 'Medium', price: 750, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Stor: mere end 10 sider/200 produkter', value: 'Large', price: 1500, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Jeg ved det ikke', value: 'Unknown Size', price: 350, lordicon: 'https://cdn.lordicon.com/rjpgjson.json' },
   ];
 
   const paymentOptions = [
-    { label: 'Yes', value: 'Yes', price: 500, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
-    { label: 'No', value: 'No', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
-    { label: 'I don\'t know', value: 'Unknown Payment', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Ja', value: 'Ja', price: 500, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke', value: 'Unknown Payment', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
   const integrationOptions = [
-    { label: 'Yes', value: 'Yes', price: 2500, lordicon: 'https://cdn.lordicon.com/wvsldibu.json' },
-    { label: 'No', value: 'No', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'I don\'t know', value: 'Unknown Integration', price: 250, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Ja', value: 'Ja', price: 2500, lordicon: 'https://cdn.lordicon.com/wvsldibu.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Jeg ved det ikke', value: 'Unknown Integration', price: 250, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
   ];
 
   const loginOptions = [
-    { label: 'Yes', value: 'Yes', price: 500, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
-    { label: 'No', value: 'No', price: 0, lordicon: 'https://cdn.lordicon.com/ghhwiltn.json' },
-    { label: 'I don\'t know', value: 'Unknown Login', price: 250, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Ja', value: 'Ja', price: 500, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/ghhwiltn.json' },
+    { label: 'Jeg ved det ikke', value: 'Unknown Login', price: 250, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
   ];
 
   const multilingualOptions = [
-    { label: 'Yes', value: 'Yes', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
-    { label: 'No', value: 'No', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Multilingual', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-3.png' },
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-2.png' },
+    { label: 'Jeg ved det ikke', value: 'Unknown Multilingual', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-3.png' },
   ];
 
   const searchOptions = [
-    { label: 'Yes', value: 'Yes', price: 350, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-1.png' },
-    { label: 'No', value: 'No', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-2.png' },
-    { label: 'I don\'t know', value: 'Unknown Search', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-3.png' },
+    { label: 'Ja', value: 'Ja', price: 350, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-1.png' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-2.png' },
+    { label: 'Jeg ved det ikke', value: 'Unknown Search', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-3.png' },
   ];
 
   const seoOptions = [
-    { label: 'Yes', value: 'Yes', price: 100, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-1.png' },
-    { label: 'No', value: 'No', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-2.png' },
-    { label: 'I don\'t know', value: 'Unknown SEO', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-3.png' },
+    { label: 'Ja', value: 'Ja', price: 100, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-1.png' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-2.png' },
+    { label: 'Jeg ved det ikke', value: 'Unknown SEO', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-3.png' },
   ];
 
   const stageOptions = [
-    { label: 'It\'s just an idea', value: 'Idea', price: 350, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'I have some sketches', value: 'Sketches', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-2.png' },
-    { label: 'It\'s in development', value: 'Development', price: 150, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-3.png' },
-    { label: 'It\'s already created', value: 'Created', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-4.png' },
+    { label: 'Det er bare en idé', value: 'Idea', price: 350, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
+    { label: 'Jeg har sketches', value: 'Sketches', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-2.png' },
+    { label: 'Den er under udvikling', value: 'Development', price: 150, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-3.png' },
+    { label: 'Den er allerede lavet', value: 'Created', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-4.png' },
   ];
 
   const renderCurrentStep = () => {
     switch (step) {
       case 'type':
-        return <OptionSelection title="What type of website are you looking for?" options={typeOptions} onSelect={handleTypeSelect} />;
+        return <OptionSelection title="Hvilken type hjemmeside har du brug for?" options={typeOptions} onSelect={handleTypeSelect} />;
       case 'design':
-        return <OptionSelection title="What design do you want for your website?" options={designOptions} onSelect={handleDesignSelect} />;
+        return <OptionSelection title="Hvilket design ønsker du til din hjemmeside?" options={designOptions} onSelect={handleDesignSelect} />;
       case 'size':
-        return <OptionSelection title="How big does your website have to be?" options={sizeOptions} onSelect={handleSizeSelect} />;
+        return <OptionSelection title="Hvor stor skal din hjemmeside være?" options={sizeOptions} onSelect={handleSizeSelect} />;
       case 'payment':
-        return <OptionSelection title="Will you take payments on your website?" options={paymentOptions} onSelect={handlePaymentSelect} />;
+        return <OptionSelection title="Kommer du til at tage imod betaling på din hjemmeside?" options={paymentOptions} onSelect={handlePaymentSelect} />;
       case 'integration':
         return <OptionSelection title="Will the website be integrated with another website, app or ERP?" options={integrationOptions} onSelect={handleIntegrationSelect} />;
       case 'login':
-        return <OptionSelection title="Do you need a user login?" options={loginOptions} onSelect={handleLoginSelect} />;
+        return <OptionSelection title="Har du brug for et brugerlogin?" options={loginOptions} onSelect={handleLoginSelect} />;
       case 'multilingual':
-        return <OptionSelection title="Will the website be multi-lingual?" options={multilingualOptions} onSelect={handleMultilingualSelect} />;
+        return <OptionSelection title="Skal hjemmesiden kunne bruges på flere sprog?" options={multilingualOptions} onSelect={handleMultilingualSelect} />;
       case 'search':
         return <OptionSelection title="Does the website need a directory/type of internal search?" options={searchOptions} onSelect={handleSearchSelect} />;
       case 'seo':
-        return <OptionSelection title="Does your website need SEO services?" options={seoOptions} onSelect={handleSEOSelect} />;
+        return <OptionSelection title="Har du brug for SEO tjenester?" options={seoOptions} onSelect={handleSEOSelect} />;
       case 'stage':
-        return <OptionSelection title="At what stage is your website?" options={stageOptions} onSelect={handleStageSelect} />;
+        return <OptionSelection title="Hvilket stadie er din hjemmeside på?" options={stageOptions} onSelect={handleStageSelect} />;
       case 'summary':
         return <Summary selection={selection} total={total} onReset={handleReset} />;
       default:
@@ -204,7 +204,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
+    <div className="flex items-center justify-center h-screen bg-black text-white">
       <div className="bg-gray-800 p-32 rounded shadow-lg text-center w-3/4 flex-col items-center">
         {/* Progress Indicator */}
         <div className="mb-14 mt-2">
