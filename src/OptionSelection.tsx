@@ -1,7 +1,10 @@
 import React from 'react';
-import 'lord-icon-element';
+import lottie from 'lottie-web';
+import { defineElement } from '@lordicon/element';
 
-// Extend the JSX namespace to include 'lord-icon'
+defineElement(lottie.loadAnimation);
+
+
 declare namespace JSX {
     interface IntrinsicElements {
         'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
@@ -10,7 +13,6 @@ declare namespace JSX {
             colors: string;
             stroke?: string;
             style?: React.CSSProperties;
-            // any other props that lord-icon accepts
         };
     }
 }
@@ -19,7 +21,7 @@ interface Option {
     label: string;
     value: string;
     price: number;
-    lordicon: string; // Added lordicon property
+    lordicon: string;
 }
 
 interface OptionSelectionProps {
@@ -36,19 +38,20 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, options, onSel
                 {options.map((option) => (
                     <div
                         key={option.value}
-                        className="flex-auto min-w-50 max-w-full px-4 mb-10"
+                        className="flex-auto min-w-50 max-w-full px-4 mb-10 text-center"
                         style={{ flexBasis: `calc(${100 / options.length}% - 1rem)` }}
                         onClick={() => onSelect(option.value, option.price)}
                     >
-                        <div className="bg-gray-700 rounded-2xl flex flex-col items-center justify-center shadow-md cursor-pointer hover:bg-gray-600 text-center p-4 text-white" style={{ height: 'auto' }}>
+                        <div className="bg-gray-700 rounded-2xl flex items-center justify-center shadow-md cursor-pointer hover:bg-gray-600 p-4 text-white" style={{ height: 'auto' }}>
                             <lord-icon
                                 src={option.lordicon}
                                 trigger="hover"
+                                stroke="bold"
                                 colors="primary:#ffffff,secondary:#ffffff"
                                 style={{ width: '80px', height: '80px' }}
                             ></lord-icon>
-                            <p className="text-xl font-medium mt-4">{option.label}</p>
                         </div>
+                        <p className="text-xl font-light mt-4">{option.label}</p>
                     </div>
                 ))}
             </div>

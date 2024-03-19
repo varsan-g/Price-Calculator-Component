@@ -6,6 +6,7 @@ declare namespace JSX {
             trigger?: string;
             colors?: string;
             style?: React.CSSProperties;
+            stroke?: string;
             // any other props that lord-icon accepts
         };
     }
