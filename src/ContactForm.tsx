@@ -13,10 +13,38 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total }) =
     const [phone, setPhone] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         onSubmit({ name, email, phone });
         setSubmitted(true);
+
+        const formData = {
+            name: name,
+            email: email,
+            phone: phone,
+        };
+
+        try {
+            const response = await fetch('https://sheet.best/api/sheets/fa2b0cc9-6e5d-4be2-ab7a-82976f027b37', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Api-Key': 'WBay%JNzItr6@ieCJYLZ$0uE8Vxk_2t1WMOreiWYqefBQs$iiwqDxsk!aMrP#anO' // API key included here
+                },
+                body: JSON.stringify([formData]) // Sheet.best expects an array of objects
+            });
+
+            if (response.ok) {
+                // The form was submitted successfully to Sheet.best
+                setSubmitted(true);
+            } else {
+                // Handle errors, such as displaying a user-friendly message
+                console.error('Failed to post data: ', await response.text());
+            }
+        } catch (error) {
+            // Handle network errors, such as displaying a user-friendly message
+            console.error('Error posting data: ', error);
+        }
     };
 
     if (submitted) {
