@@ -77,31 +77,31 @@ const App: React.FC = () => {
   const handleLoginSelect = (value: string, price: number) => {
     setSelection({ ...selection, login: value });
     setTotal(total + price);
-    setStep('multilingual'); // Goes to the next step
+    setStep('multilingual');
   };
 
   const handleMultilingualSelect = (value: string, price: number) => {
     setSelection({ ...selection, multilingual: value });
     setTotal(total + price);
-    setStep('search'); // Goes to the next step
+    setStep('search');
   };
 
   const handleSearchSelect = (value: string, price: number) => {
     setSelection({ ...selection, search: value });
     setTotal(total + price);
-    setStep('seo'); // Goes to the next step
+    setStep('seo');
   };
 
   const handleSEOSelect = (value: string, price: number) => {
     setSelection({ ...selection, seo: value });
     setTotal(total + price);
-    setStep('stage'); // Goes to the next step
+    setStep('stage');
   };
 
   const handleStageSelect = (value: string, price: number) => {
     setSelection({ ...selection, stage: value });
     setTotal(total + price);
-    setStep('summary'); // Goes to the final summary step
+    setStep('summary');
   };
 
   const handleReset = () => {
@@ -205,12 +205,12 @@ const App: React.FC = () => {
 
   return (
     <div className="flex items-start justify-center h-screen text-white pt-4" style={{ backgroundColor: '#090909' }}>
-      <div className="p-32 rounded shadow-lg text-center w-3/4 flex-col items-center" style={{ backgroundColor: '#090909' }}>
+      <div className={`p-32 rounded shadow-lg text-center w-3/4 flex-col items-center ${step === 'summary' ? 'pt-4 pb-8' : ''}`} style={{ backgroundColor: '#090909' }}>
         {/* Progress Indicator */}
-        <div className="mb-14 mt-2">
+        <div className="mb-14">
           {step !== 'summary' && (
             <p className="text-xl font-semibold">
-              {getCurrentStepNumber()}/{totalSteps}
+              {totalSteps * getCurrentStepNumber()}%
             </p>
           )}
         </div>
