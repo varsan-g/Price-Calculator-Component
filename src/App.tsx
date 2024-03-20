@@ -151,27 +151,27 @@ const App: React.FC = () => {
 
   const multilingualOptions = [
     { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-2.png' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-7-3.png' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
   const searchOptions = [
-    { label: 'Ja', value: 'Ja', price: 350, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-1.png' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-2.png' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-8-3.png' },
+    { label: 'Ja', value: 'Ja', price: 350, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
   const seoOptions = [
-    { label: 'Ja', value: 'Ja', price: 100, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-1.png' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-2.png' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-9-3.png' },
+    { label: 'Ja', value: 'Ja', price: 100, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
   const stageOptions = [
-    { label: 'Det er bare en idé', value: 'Idé', price: 350, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-1.png' },
-    { label: 'Jeg har sketches', value: 'Sketches', price: 250, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-2.png' },
-    { label: 'Den er under udvikling', value: 'Under udvikling', price: 150, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-3.png' },
-    { label: 'Den er allerede lavet', value: 'Allerede bygget', price: 0, lordicon: 'https://www.howmuchtocreateawebsite.co.uk/img/web/answer-10-4.png' },
+    { label: 'Det er bare en idé', value: 'Idé', price: 350, lordicon: '' },
+    { label: 'Jeg har sketches', value: 'Sketches', price: 250, lordicon: '' },
+    { label: 'Den er under udvikling', value: 'Under udvikling', price: 150, lordicon: '' },
+    { label: 'Den er allerede lavet', value: 'Allerede bygget', price: 0, lordicon: '' },
   ];
 
   const renderCurrentStep = () => {
