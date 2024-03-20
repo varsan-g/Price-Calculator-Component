@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import OptionSelection from './OptionSelection';
 import Summary from './Summary';
+import ContactForm from './ContactForm';
 import 'lord-icon-element';
 
-type Step = 'type' | 'design' | 'size' | 'payment' | 'integration' | 'login' | 'multilingual' | 'search' | 'seo' | 'stage' | 'summary';
+type Step = 'type' | 'design' | 'size' | 'payment' | 'integration' | 'login' | 'multilingual' | 'search' | 'seo' | 'stage' | 'summary' | 'contact';
 
 interface Selection {
   type: string;
@@ -36,6 +37,8 @@ const App: React.FC = () => {
 
   const [total, setTotal] = useState<number>(0);
   const totalSteps = 10;
+  // const [setFormSubmitted] = useState(false);
+
 
   const getCurrentStepNumber = (): number => {
     const stepOrder: Step[] = ['type', 'design', 'size', 'payment', 'integration', 'login', 'multilingual', 'search', 'seo', 'stage'];
@@ -109,6 +112,14 @@ const App: React.FC = () => {
     setTotal(0);
     setStep('type');
   };
+
+  const handleContactFormSubmit = (contactDetails: { name: string; email: string; phone: string; }) => {
+    // Process the contact details here.
+    // For now, just console log the details and reset the form
+    console.log(contactDetails);
+  };
+
+
 
   const typeOptions = [
     { label: 'Ecommerce / Webshop', value: 'Ecommerce / Webshop', price: 3000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
@@ -197,7 +208,21 @@ const App: React.FC = () => {
       case 'stage':
         return <OptionSelection title="Hvilket stadie er din hjemmeside på?" options={stageOptions} onSelect={handleStageSelect} />;
       case 'summary':
-        return <Summary selection={selection} total={total} onReset={handleReset} />;
+        return (
+          <Summary
+            selection={selection}
+            total={total}
+            onReset={handleReset}
+            onContinue={() => setStep('contact')}
+          />
+        );
+      case 'contact':
+        return <ContactForm
+          onSubmit={handleContactFormSubmit}
+          total={total}
+          onReset={handleReset}
+        />;
+      // ... any other cases
       default:
         return null;
     }
@@ -208,7 +233,7 @@ const App: React.FC = () => {
       <div className={`p-32 rounded shadow-lg text-center w-3/4 flex-col items-center ${step === 'summary' ? 'pt-0 pb-8' : ''}`} style={{ backgroundColor: '#090909' }}>
         {/* Progress Indicator */}
         <div className="mb-14">
-          {step !== 'summary' && (
+          {step !== 'summary' && step !== 'contact' && (
             <p className="text-xl font-semibold">
               {totalSteps * getCurrentStepNumber()}%
             </p>

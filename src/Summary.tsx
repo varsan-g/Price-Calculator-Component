@@ -15,9 +15,10 @@ interface SummaryProps {
     };
     total: number;
     onReset: () => void;
+    onContinue: () => void;
 }
 
-const Summary: React.FC<SummaryProps> = ({ selection, total, onReset }) => {
+const Summary: React.FC<SummaryProps> = ({ selection, onReset, onContinue }) => {
     return (
         <div>
             <h1 className="text-4xl font-bold mb-14">Oversigt</h1>
@@ -31,8 +32,11 @@ const Summary: React.FC<SummaryProps> = ({ selection, total, onReset }) => {
             <p className="mb-2">Intern søgning nødvendigt: {selection.search}</p>
             <p className="mb-2">Brug for SEO services: {selection.seo}</p>
             <p className="mb-2">Hjemmeside stadie: {selection.stage}</p>
-            <h2 className="font-bold mb-16 mt-14 text-3xl ">Total estimeret pris: {total} kr</h2>
-            <button className="p-2 mt-2 mb-10 w-44 rounded-full shadow-lg bg-blue-500 text-white hover:bg-blue-600" onClick={onReset}>Prøv igen</button>
+            {/* <h2 className="font-bold mb-16 mt-14 text-3xl ">Total estimeret pris: {total} kr</h2> */}
+            {/* <button className="p-2 mt-2 mb-10 w-44 mr-2 rounded-full shadow-lg bg-gray-800 text-white hover:bg-gray-700" onClick={onReset}>Start forfra</button>
+            <button className="p-2 mt-2 mb-10 w-44 mx-2 rounded-full shadow-lg bg-blue-500 text-white hover:bg-blue-600" onClick={onReset}>Fortsæt</button> */}
+            <button className="p-2 mt-20 mb-10 w-44 mr-2 rounded-full shadow-lg bg-gray-800 text-white hover:bg-gray-700" onClick={onReset}>Start forfra</button>
+            <button className="p-2 mt-20 mb-10 w-44 mx-2 rounded-full shadow-lg bg-blue-500 text-white hover:bg-blue-600" onClick={onContinue}>Fortsæt</button>
         </div>
     );
 };
