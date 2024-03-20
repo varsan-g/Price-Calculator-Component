@@ -32,7 +32,7 @@ const Summary: React.FC<SummaryProps> = ({ selection, total, onReset }) => {
             <p className="mb-2">Brug for SEO services: {selection.seo}</p>
             <p className="mb-2">Hjemmeside stadie: {selection.stage}</p>
             <h2 className="font-bold mb-16 mt-14 text-3xl ">Total estimeret pris: {total} kr</h2>
-            <button className="p-2 mt-10 mb-10 w-44 rounded-full shadow-lg bg-blue-500 text-white hover:bg-blue-600" onClick={onReset}>Prøv igen</button>
+            <button className="p-2 mt-2 mb-10 w-44 rounded-full shadow-lg bg-blue-500 text-white hover:bg-blue-600" onClick={onReset}>Prøv igen</button>
         </div>
     );
 };
