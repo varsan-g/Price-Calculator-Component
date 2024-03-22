@@ -1,6 +1,6 @@
 # Multi-Step Cost Calculator
 
-**Live App**: https://ornate-valkyrie-fc53d1.netlify.app/
+**Live App**: https://pricecalculator-khaki.vercel.app/
 
 This project is a multi-step cost calculator designed to provide users with an estimated cost for building a website. It walks users through various options such as website type, design preference, size, payment integration, and additional features. After users make their selections, the calculator provides a summary of their choices and an estimated price.
 
