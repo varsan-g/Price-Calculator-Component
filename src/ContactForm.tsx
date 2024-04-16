@@ -76,7 +76,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total }) =
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             id="name"
                             type="text"
-                            placeholder="Lathes Varsan"
+                            placeholder="Jens Jensen"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
@@ -92,7 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total }) =
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             id="email"
                             type="email"
-                            placeholder="info@nordweb.dk"
+                            placeholder="kontakt@nordweb.dk"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -120,7 +120,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total }) =
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
                         >
-                            Få mit uforpligtende tilbud
+                            SE DIN PRIS
                         </button>
                     </div>
                 </div>
