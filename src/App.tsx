@@ -206,7 +206,7 @@ const App: React.FC = () => {
       <div className="p-12 rounded shadow text-center w-5/6 flex-col items-center" style={{ backgroundColor: '#090909' }}>
         <div className="mb-14">
           {step !== 'contact' && (
-            <p className="text-xl font-semibold">
+            <p className="text-lg font-semibold">
               {getCurrentStepNumber()}/{totalSteps}
             </p>
           )}
