@@ -55,12 +55,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
     if (submitted) {
         return (
             <div className="mb-14 text-center text-white">
-                <h1 className="text-4xl font-bold mb-6">Dit prisestimat</h1>
-                <p className="text-xl mb-12 font-light opacity-70 ">Prisen er beregnet ud fra dine valg eksl. moms:</p>
-                <div className="bg-green-900 py-7 px-24 inline-block rounded-xl mb-12 border-4 border-green-600 ">
+                <h1 className="text-4xl font-bold mb-4">Dit prisestimat</h1>
+                <p className="text-xl mb-8 font-light opacity-70 ">Prisen er beregnet ud fra dine valg eksl. moms:</p>
+                <div className="bg-green-900 py-7 px-24 inline-block rounded-xl mb-8 border-4 border-green-600 ">
                     <p className="text-5xl font-bold text-white">{`DKK ${total}.-`}</p>
                 </div>
-                <p className="text-lg mb-12 font-light text-white opacity-70">
+                <p className="text-lg mb-8 font-light text-white opacity-70">
                     Du vil indenfor kort tid blive kontaktet angående dit tilbud, <br />
                     hvor du vil have mulighed for at tage næste skridt.
                 </p>
