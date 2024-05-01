@@ -1,23 +1,19 @@
 // src/App.tsx
 import React, { useState } from 'react';
 import OptionSelection from './OptionSelection';
-import Summary from './Summary';
 import ContactForm from './ContactForm';
 import 'lord-icon-element';
 
-type Step = 'type' | 'design' | 'size' | 'payment' | 'integration' | 'login' | 'multilingual' | 'search' | 'seo' | 'stage' | 'summary' | 'contact';
+type Step = 'type' | 'design' | 'size' | 'language' | 'branding' | 'webdesign' | 'content' | 'contact';
 
 interface Selection {
   type: string;
   design: string;
   size: string;
-  payment: string;
-  integration: string;
-  login: string;
-  multilingual: string;
-  search: string;
-  seo: string;
-  stage: string;
+  language: string;
+  branding: string;
+  webdesign: string;
+  content: string;
 }
 
 const App: React.FC = () => {
@@ -26,32 +22,26 @@ const App: React.FC = () => {
     type: '',
     design: '',
     size: '',
-    payment: '',
-    integration: '',
-    login: '',
-    multilingual: '',
-    search: '',
-    seo: '',
-    stage: '',
+    language: '',
+    branding: '',
+    webdesign: '',
+    content: '',
   });
 
   const [total, setTotal] = useState<number>(0);
-  const totalSteps = 10;
-  // const [setFormSubmitted] = useState(false);
+  const totalSteps = 6;
 
 
   const getCurrentStepNumber = (): number => {
-    const stepOrder: Step[] = ['type', 'design', 'size', 'payment', 'integration', 'login', 'multilingual', 'search', 'seo', 'stage'];
+    const stepOrder: Step[] = ['type', 'design', 'size', 'language', 'branding', 'webdesign', 'content'];
     return stepOrder.indexOf(step) + 1;
   };
-
 
   const handleTypeSelect = (type: string, price: number) => {
     setSelection({ ...selection, type });
     setTotal(total + price);
     setStep('design');
   };
-
 
   const handleDesignSelect = (design: string, price: number) => {
     setSelection({ ...selection, design });
@@ -62,185 +52,123 @@ const App: React.FC = () => {
   const handleSizeSelect = (size: string, price: number) => {
     setSelection({ ...selection, size });
     setTotal(total + price);
-    setStep('payment');
+    setStep('language');
   };
 
-  const handlePaymentSelect = (payment: string, price: number) => {
-    setSelection({ ...selection, payment });
+  const handleLanguageSelect = (value: string, price: number) => {
+    setSelection({ ...selection, language: value });
     setTotal(total + price);
-    setStep('integration');
+    setStep('branding');
   };
 
-  const handleIntegrationSelect = (integration: string, price: number) => {
-    setSelection({ ...selection, integration });
+  const handleBrandingSelect = (value: string, price: number) => {
+    setSelection({ ...selection, branding: value });
     setTotal(total + price);
-    setStep('login');
+    setStep('webdesign');
   };
 
-  const handleLoginSelect = (value: string, price: number) => {
-    setSelection({ ...selection, login: value });
+  const handleWebdesignSelect = (value: string, price: number) => {
+    setSelection({ ...selection, webdesign: value });
     setTotal(total + price);
-    setStep('multilingual');
+    setStep('content');
   };
 
-  const handleMultilingualSelect = (value: string, price: number) => {
-    setSelection({ ...selection, multilingual: value });
+  const handleContentSelect = (value: string, price: number) => {
+    setSelection({ ...selection, content: value });
     setTotal(total + price);
-    setStep('search');
-  };
-
-  const handleSearchSelect = (value: string, price: number) => {
-    setSelection({ ...selection, search: value });
-    setTotal(total + price);
-    setStep('seo');
-  };
-
-  const handleSEOSelect = (value: string, price: number) => {
-    setSelection({ ...selection, seo: value });
-    setTotal(total + price);
-    setStep('stage');
-  };
-
-  const handleStageSelect = (value: string, price: number) => {
-    setSelection({ ...selection, stage: value });
-    setTotal(total + price);
-    setStep('summary');
+    setStep('contact');
   };
 
   const handleReset = () => {
-    setSelection({ type: '', design: '', size: '', payment: '', integration: '', login: '', multilingual: '', search: '', seo: '', stage: '' });
+    setSelection({ type: '', design: '', size: '', language: '', branding: '', webdesign: '', content: '' });
     setTotal(0);
     setStep('type');
   };
 
   const handleContactFormSubmit = (contactDetails: { name: string; email: string; phone: string; }) => {
-    // Process the contact details here.
-    // For now, just console log the details and reset the form
     console.log(contactDetails);
   };
 
-
-
   const typeOptions = [
-    { label: 'Ecommerce / Webshop', value: 'Ecommerce / Webshop', price: 3000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
-    { label: 'Hjemmeside med blog', value: 'Blog', price: 1000, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
-    { label: 'Hjemmeside til erhverv', value: 'Business', price: 1750, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
-    { label: 'Custom hjemmeside', value: 'Custom website', price: 5000, lordicon: 'https://cdn.lordicon.com/uktwwckg.json' },
+    { label: 'Ny hjemmeside', value: 'NewSite', price: 1000, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
+    { label: 'Opdatering af eksisterende hjemmeside', value: 'UpdateSite', price: 1750, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
   ];
 
   const designOptions = [
-    { label: 'Brug en skabelon', value: 'Template', price: 500, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
-    { label: 'Custom design', value: 'Custom design', price: 1500, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
-    { label: 'Jeg har ikke brug for design', value: 'Nej design', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 350, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Simpel præsentation', value: 'Lille', price: 500, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
+    { label: 'Kundehenvendelser & præsentation', value: 'Mellem', price: 1500, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
+    { label: 'Større avanceret hjemmeside', value: 'Stor', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 350, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
   ];
 
   const sizeOptions = [
-    { label: 'Lille: mindre end 3 undersider/50 produkter', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Mellem: mindre end 10 undersider/200 produkter', value: 'Mellem', price: 750, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Stor: mere end 10 sider/200 produkter', value: 'Stor', price: 1500, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 350, lordicon: 'https://cdn.lordicon.com/rjpgjson.json' },
+    { label: 'One-Pager (1 side)', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: '2-3 Sider', value: 'Mellem', price: 750, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: '5-10 Sider', value: 'Stor', price: 1500, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: '10+ Sider', value: 'Mega', price: 350, lordicon: 'https://cdn.lordicon.com/rjpgjson.json' },
   ];
 
-  const paymentOptions = [
-    { label: 'Ja', value: 'Ja', price: 500, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
-  ];
-
-  const integrationOptions = [
-    { label: 'Ja', value: 'Ja', price: 2500, lordicon: 'https://cdn.lordicon.com/wvsldibu.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-  ];
-
-  const loginOptions = [
-    { label: 'Ja', value: 'Ja', price: 500, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/ghhwiltn.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-  ];
-
-  const multilingualOptions = [
+  const languageOptions = [
     { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
     { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
-  const searchOptions = [
-    { label: 'Ja', value: 'Ja', price: 350, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+  const brandingOptions = [
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
-  const seoOptions = [
-    { label: 'Ja', value: 'Ja', price: 100, lordicon: 'https://cdn.lordicon.com/vixogsdv.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
-    { label: 'Jeg ved det ikke', value: 'Ukendt', price: 0, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+  const webdesignOptions = [
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Delvist klar', value: 'Delvist klar', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Nej, jeg har alt klar', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
-  const stageOptions = [
-    { label: 'Det er bare en idé', value: 'Idé', price: 350, lordicon: '' },
-    { label: 'Jeg har sketches', value: 'Sketches', price: 250, lordicon: '' },
-    { label: 'Den er under udvikling', value: 'Under udvikling', price: 150, lordicon: '' },
-    { label: 'Den er allerede lavet', value: 'Allerede bygget', price: 0, lordicon: '' },
+  const contentOptions = [
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Jeg leverer enkelte tekster og billeder', value: 'Delvist klar', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Nej, jeg leverer alt', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
   const renderCurrentStep = () => {
     switch (step) {
       case 'type':
-        return <OptionSelection title="Hvilken type hjemmeside har du brug for?" options={typeOptions} onSelect={handleTypeSelect} />;
+        return <OptionSelection title="Hvad skal du bruge?" options={typeOptions} onSelect={handleTypeSelect} />;
       case 'design':
-        return <OptionSelection title="Hvilket design ønsker du til din hjemmeside?" options={designOptions} onSelect={handleDesignSelect} />;
+        return <OptionSelection title="Hvad er formålet med siden?" options={designOptions} onSelect={handleDesignSelect} />;
       case 'size':
-        return <OptionSelection title="Hvor stor skal din hjemmeside være?" options={sizeOptions} onSelect={handleSizeSelect} />;
-      case 'payment':
-        return <OptionSelection title="Kommer du til at tage imod betaling på din hjemmeside?" options={paymentOptions} onSelect={handlePaymentSelect} />;
-      case 'integration':
-        return <OptionSelection title="Kommer siden til at blive integreret med en anden hjemmeside, app eller ERP?" options={integrationOptions} onSelect={handleIntegrationSelect} />;
-      case 'login':
-        return <OptionSelection title="Har du brug for et brugerlogin?" options={loginOptions} onSelect={handleLoginSelect} />;
-      case 'multilingual':
-        return <OptionSelection title="Skal hjemmesiden kunne bruges på flere sprog?" options={multilingualOptions} onSelect={handleMultilingualSelect} />;
-      case 'search':
-        return <OptionSelection title="Skal der være en form for intern søgning på siden?" options={searchOptions} onSelect={handleSearchSelect} />;
-      case 'seo':
-        return <OptionSelection title="Har du brug for at vi laver din SEO?" options={seoOptions} onSelect={handleSEOSelect} />;
-      case 'stage':
-        return <OptionSelection title="Hvilket stadie er din hjemmeside på?" options={stageOptions} onSelect={handleStageSelect} />;
-      case 'summary':
-        return (
-          <Summary
-            selection={selection}
-            total={total}
-            onReset={handleReset}
-            onContinue={() => setStep('contact')}
-          />
-        );
+        return <OptionSelection title="Hvor mange sider skal du bruge?" options={sizeOptions} onSelect={handleSizeSelect} />;
+      case 'language':
+        return <OptionSelection title="Skal hjemmesiden kunne bruges på flere sprog?" options={languageOptions} onSelect={handleLanguageSelect} />;
+      case 'branding':
+        return <OptionSelection title="Skal vi stå for logo og branding?" options={brandingOptions} onSelect={handleBrandingSelect} />;
+      case 'webdesign':
+        return <OptionSelection title="Skal vi stå for design af hjemmesiden?" options={webdesignOptions} onSelect={handleWebdesignSelect} />;
+      case 'content':
+        return <OptionSelection title="Skal vi stå for tekst og billeder på hjemmesiden?" options={contentOptions} onSelect={handleContentSelect} />;
       case 'contact':
-        return <ContactForm
-          onSubmit={handleContactFormSubmit}
-          total={total}
-          onReset={handleReset}
-        />;
-      // ... any other cases
+        return <ContactForm onSubmit={handleContactFormSubmit} selection={selection} total={total} onReset={handleReset} />;
       default:
         return null;
     }
   };
 
+
+
   return (
     <div className="flex items-start justify-center h-screen text-white pt-2" style={{ backgroundColor: '#090909' }}>
-      <div className={`p-12 rounded shadow text-center w-5/6 flex-col items-center ${step === 'summary' ? 'pt-0 pb-8' : ''}`} style={{ backgroundColor: '#090909' }}>
-        {/* Progress Indicator */}
+      <div className="p-12 rounded shadow text-center w-5/6 flex-col items-center" style={{ backgroundColor: '#090909' }}>
         <div className="mb-14">
-          {step !== 'summary' && step !== 'contact' && (
+          {step !== 'contact' && (
             <p className="text-xl font-semibold">
-              {totalSteps * getCurrentStepNumber()}%
+              {getCurrentStepNumber()}/{totalSteps}
             </p>
           )}
         </div>
-
-        {/* Step Content */}
         {renderCurrentStep()}
       </div>
     </div>

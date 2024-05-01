@@ -1,13 +1,13 @@
-// ContactForm.tsx
 import React, { useState } from 'react';
 
 interface ContactFormProps {
     onSubmit: (contactDetails: { name: string; email: string; phone: string; }) => void;
     onReset: () => void;
     total: number;
+    selection: { type: string; design: string; size: string; language: string; branding: string; webdesign: string, content: string; };
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, selection }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -18,31 +18,36 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total }) =
         onSubmit({ name, email, phone });
         setSubmitted(true);
 
-        const formData = {
-            name: name,
-            email: email,
-            phone: phone,
-        };
+        const formData = new FormData();
+        formData.append('Name', name);
+        formData.append('Email', email);
+        formData.append('Phone', phone);
+        formData.append('Price', total.toString());
+
+
+        // Align with the correct order
+        formData.append('Type', selection.type);
+        formData.append('Design', selection.design);
+        formData.append('Size', selection.size);
+        formData.append('Language', selection.language);
+        formData.append('Branding', selection.branding);
+        formData.append('Webdesign', selection.webdesign);
+        formData.append('Content', selection.content);
+
 
         try {
-            const response = await fetch('https://sheet.best/api/sheets/fa2b0cc9-6e5d-4be2-ab7a-82976f027b37', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbwapXbDbF-c6KecKjqET0PFnW90x8rgNpGgsSBkvfEloNm79Wcq9Vi8kH55-qJ7jQlSyA/exec', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Api-Key': 'WBay%JNzItr6@ieCJYLZ$0uE8Vxk_2t1WMOreiWYqefBQs$iiwqDxsk!aMrP#anO' // API key included here
-                },
-                body: JSON.stringify([formData]) // Sheet.best expects an array of objects
+                body: formData
             });
 
             if (response.ok) {
-                // The form was submitted successfully to Sheet.best
+                // The form was submitted successfully to Google Sheets script
                 setSubmitted(true);
             } else {
-                // Handle errors, such as displaying a user-friendly message
                 console.error('Failed to post data: ', await response.text());
             }
         } catch (error) {
-            // Handle network errors, such as displaying a user-friendly message
             console.error('Error posting data: ', error);
         }
     };
