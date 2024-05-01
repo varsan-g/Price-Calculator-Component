@@ -54,12 +54,24 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
 
     if (submitted) {
         return (
-            <div className="text-white mb-14">
-                <h2 className="text-3xl font-bold">
-                    Total estimeret pris: {total} kr
-                </h2>
+            <div className="mb-14 text-center text-white">
+                <h1 className="text-4xl font-bold mb-6">Dit prisestimat</h1>
+                <p className="text-xl mb-12 font-light opacity-70 ">Prisen er beregnet ud fra dine valg eksl. moms:</p>
+                <div className="bg-green-900 py-7 px-24 inline-block rounded-xl mb-12 border-4 border-green-600 ">
+                    <p className="text-5xl font-bold text-white">{`DKK ${total}.-`}</p>
+                </div>
+                <p className="text-lg mb-12 font-light text-white opacity-70">
+                    Du vil indenfor kort tid blive kontaktet angående dit tilbud, <br />
+                    hvor du vil have mulighed for at tage næste skridt.
+                </p>
+                <p className="text-sm italic font-light mb-12 text-white opacity-50">
+                    OBS: Vær opmærksom på, at vi altid udarbejder et personligt og
+                    uforpligtende tilbud tilpasset den specifikke opgave.<br />Da ingen
+                    to hjemmesider er ens, kan den endelige pris variere
+                    efter en nærmere dialog om dit projekt.
+                </p>
                 <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-12 mt-14 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded focus:outline-none focus:shadow-outline"
                     type="button"
                     onClick={onReset}
                 >
@@ -68,6 +80,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
             </div>
         );
     }
+
 
     return (
         <div className="flex flex-col items-center w-full">
