@@ -43,7 +43,7 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, options, onSel
                         style={{ flexBasis: `calc(${100 / options.length}% - 1rem)` }}
                         onClick={() => onSelect(option.value, option.price)}
                     >
-                        <div className="rounded-2xl flex items-align justify-center shadow-md cursor-pointer p-10 text-white hover-gradient" style={{ backgroundColor: '#0e0e0e', height: 'auto' }}>
+                        <div className="rounded-3xl flex items-align justify-center shadow-md cursor-pointer p-10 text-white hover-gradient" style={{ backgroundColor: '#0e0e0e', height: 'auto' }}>
                             <lord-icon
                                 src={option.lordicon}
                                 trigger="hover"
