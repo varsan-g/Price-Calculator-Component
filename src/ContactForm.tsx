@@ -70,15 +70,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
     }
 
     return (
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center w-full">
             <form onSubmit={handleSubmit} className="w-full max-w-lg">
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-m font-bold mb-2" htmlFor="name">
-                            Navn*
+                        <label className="block tracking-wide text-white text-m font-bold mb-2 text-left" htmlFor="name">
+                            Navn <span className="text-red-500">*</span>
                         </label>
                         <input
-                            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-900 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"
                             id="name"
                             type="text"
                             placeholder="Jens Jensen"
@@ -90,14 +90,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-m font-bold mb-2" htmlFor="email">
-                            E-mail*
+                        <label className="block text-white text-m font-bold mb-2 text-left" htmlFor="email">
+                            E-mail <span className="text-red-500">*</span>
                         </label>
                         <input
-                            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-900 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"
                             id="email"
                             type="email"
-                            placeholder="kontakt@nordweb.dk"
+                            placeholder="mail@dinmail.dk"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -106,11 +106,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-m font-bold mb-2" htmlFor="phone">
+                        <label className="block tracking-wide text-white text-m font-bold mb-2 text-left" htmlFor="phone">
                             Telefonnummer
                         </label>
                         <input
-                            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-900 text-white border border-gray-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"
                             id="phone"
                             type="tel"
                             placeholder="+45 30 14 42 40"
@@ -122,15 +122,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                 <div className="flex flex-wrap -mx-3 mb-6 mt-14">
                     <div className="w-full px-4">
                         <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-12 rounded focus:outline-none focus:shadow-outline"
+                            className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-12 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
                         >
-                            SE DIN PRIS
+                            BEREGN PRISEN
                         </button>
                     </div>
                 </div>
             </form>
-
         </div>
     );
 };
