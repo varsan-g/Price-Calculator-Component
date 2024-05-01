@@ -29,7 +29,7 @@ const App: React.FC = () => {
   });
 
   const [total, setTotal] = useState<number>(0);
-  const totalSteps = 6;
+  const totalSteps = 7;
 
 
   const getCurrentStepNumber = (): number => {
