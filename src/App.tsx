@@ -4,7 +4,7 @@ import OptionSelection from './OptionSelection';
 import ContactForm from './ContactForm';
 import 'lord-icon-element';
 
-type Step = 'type' | 'design' | 'size' | 'language' | 'branding' | 'webdesign' | 'content' | 'contact';
+type Step = 'start' | 'type' | 'design' | 'size' | 'language' | 'branding' | 'webdesign' | 'content' | 'contact';
 
 interface Selection {
   type: string;
@@ -17,7 +17,7 @@ interface Selection {
 }
 
 const App: React.FC = () => {
-  const [step, setStep] = useState<Step>('type');
+  const [step, setStep] = useState<Step>('start');
   const [selection, setSelection] = useState<Selection>({
     type: '',
     design: '',
@@ -31,6 +31,9 @@ const App: React.FC = () => {
   const [total, setTotal] = useState<number>(0);
   const totalSteps = 7;
 
+  const handleStart = () => {
+    setStep('type');
+  };
 
   const getCurrentStepNumber = (): number => {
     const stepOrder: Step[] = ['type', 'design', 'size', 'language', 'branding', 'webdesign', 'content'];
@@ -134,7 +137,46 @@ const App: React.FC = () => {
     { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
   ];
 
+  const renderStartComponent = () => {
+    if (step === 'start') {
+      return (
+        <div className="text-center flex flex-col items-center">
+          <div className="mb-10">
+            <lord-icon
+              src="https://cdn.lordicon.com/wzwygmng.json"
+              trigger="in"
+              stroke="bold"
+              colors="primary:#ffffff,secondary:#ffffff"
+              style={{ width: '100px', height: '100px' }}
+            ></lord-icon>
+          </div>
+          <h1 className="text-4xl font-bold mb-8">Få et prisestimat på din drømme hjemmeside</h1>
+          <p className="mb-8 opacity-65">Prøv vores prisberegner, og få et estimat på hvad din hjemmeside vil koste at udvikle. <br />
+            Den præsenterede pris er vejledende, og kan varierer efter specifikke funktioner, og anmodninger</p>
+          <button
+            className="bg-gray-700 text-white text-4xl font-bold py-9 px-36  focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
+            onClick={handleStart}
+          >
+            Start nu
+          </button>
+          <div className="mt-6 opacity-40 flex items-center justify-center">
+            <lord-icon
+              src="https://cdn.lordicon.com/qvyppzqz.json"
+              trigger="loop"
+              colors="primary:#ffffff,secondary:#ffffff"
+              style={{ width: '25px', height: '25px' }}
+            ></lord-icon>
+            <p className="ml-2">Tager kun 1-2 minutter</p>
+          </div>
+        </div>
+      );
+    }
+    return null;
+  };
+
+
   const renderCurrentStep = () => {
+
     switch (step) {
       case 'type':
         return <OptionSelection title="Hvad skal du bruge?" options={typeOptions} onSelect={handleTypeSelect} />;
@@ -169,6 +211,7 @@ const App: React.FC = () => {
             </p>
           )}
         </div>
+        {renderStartComponent()}
         {renderCurrentStep()}
       </div>
     </div>

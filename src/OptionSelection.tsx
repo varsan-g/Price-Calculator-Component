@@ -10,6 +10,7 @@ declare namespace JSX {
         'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
             src: string;
             trigger: string;
+            delay?: string;
             colors: string;
             stroke?: string;
             style?: React.CSSProperties;
