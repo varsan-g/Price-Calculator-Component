@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import confetti from 'canvas-confetti';
+
 
 interface ContactFormProps {
     onSubmit: (contactDetails: { name: string; email: string; phone: string; }) => void;
@@ -17,6 +19,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
         event.preventDefault();
         onSubmit({ name, email, phone });
         setSubmitted(true);
+
+        triggerConfetti();
+
 
         const formData = new FormData();
         formData.append('Name', name);
@@ -50,6 +55,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
         } catch (error) {
             console.error('Error posting data: ', error);
         }
+    };
+
+    const triggerConfetti = () => {
+        confetti({
+            particleCount: 200,
+            spread: 160,
+            startVelocity: 70,
+            origin: { y: 0.6 }
+        });
     };
 
     if (submitted) {
