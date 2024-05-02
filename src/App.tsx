@@ -141,32 +141,32 @@ const App: React.FC = () => {
     if (step === 'start') {
       return (
         <div className="text-center flex flex-col items-center">
-          <div className="mb-10">
+          <div className="mb-8">
             <lord-icon
               src="https://cdn.lordicon.com/wzwygmng.json"
               trigger="in"
               stroke="bold"
               colors="primary:#ffffff,secondary:#ffffff"
-              style={{ width: '100px', height: '100px' }}
+              style={{ width: '80px', height: '80px' }}
             ></lord-icon>
           </div>
-          <h1 className="text-4xl font-bold mb-8">Få et prisestimat på din drømme hjemmeside</h1>
-          <p className="mb-8 opacity-65">Prøv vores prisberegner, og få et estimat på hvad din hjemmeside vil koste at udvikle. <br />
-            Den præsenterede pris er vejledende, og kan varierer efter specifikke funktioner, og anmodninger</p>
+          <h1 className="text-3xl font-bold mb-8">Få et prisestimat på din drømmehjemmeside</h1>
+          <p className="mb-10 opacity-65">Prøv vores prisberegner, og få et estimat på hvad din hjemmeside vil koste at udvikle. <br />
+            Den præsenterede pris er vejledende, og kan variere efter specifikke funktioner og anmodninger.</p>
           <button
-            className="bg-gray-700 text-white text-4xl font-bold py-9 px-36  focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
+            className="bg-gray-700 text-white text-3xl font-bold py-7 px-32  focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
             onClick={handleStart}
           >
             Start nu
           </button>
-          <div className="mt-6 opacity-40 flex items-center justify-center">
+          <div className="mt-4 opacity-40 flex items-center justify-center">
             <lord-icon
               src="https://cdn.lordicon.com/qvyppzqz.json"
               trigger="loop"
               colors="primary:#ffffff,secondary:#ffffff"
               style={{ width: '25px', height: '25px' }}
             ></lord-icon>
-            <p className="ml-2">Tager kun 1-2 minutter</p>
+            <p className="ml-1">Tager kun 1-2 minutter</p>
           </div>
         </div>
       );
@@ -204,7 +204,7 @@ const App: React.FC = () => {
   return (
     <div className="flex items-start justify-center h-screen text-white pt-2" style={{ backgroundColor: '#090909' }}>
       <div className="p-12 rounded shadow text-center w-5/6 flex-col items-center" style={{ backgroundColor: '#090909' }}>
-        <div className="mb-14">
+        <div className="mb-8">
           {step !== 'contact' && (
             <p className="text-lg font-semibold">
               {getCurrentStepNumber()}/{totalSteps}
