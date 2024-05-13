@@ -1,4 +1,3 @@
-// custom-elements.d.ts
 declare namespace JSX {
     interface IntrinsicElements {
         'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
@@ -7,7 +6,6 @@ declare namespace JSX {
             colors?: string;
             style?: React.CSSProperties;
             stroke?: string;
-            // any other props that lord-icon accepts
         };
     }
 }

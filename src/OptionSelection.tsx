@@ -47,7 +47,7 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, options, onSel
                             <lord-icon
                                 src={option.lordicon}
                                 trigger="hover"
-                                stroke="bold"
+                                stroke="regular"
                                 colors="primary:#ffffff,secondary:#ffffff"
                                 style={{ width: '80px', height: '80px' }}
                             ></lord-icon>
