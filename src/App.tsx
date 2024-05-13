@@ -93,48 +93,48 @@ const App: React.FC = () => {
   };
 
   const typeOptions = [
-    { label: 'Ny hjemmeside', value: 'NewSite', price: 1000, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
-    { label: 'Opdatering af eksisterende hjemmeside', value: 'UpdateSite', price: 1750, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
+    { label: 'Ny hjemmeside', value: 'NewSite', price: 1000, lordicon: 'https://cdn.lordicon.com/fzfkoxxo.json' },
+    { label: 'Opdatering af eksisterende hjemmeside', value: 'UpdateSite', price: 1750, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
   ];
 
   const designOptions = [
     { label: 'Simpel præsentation', value: 'Lille', price: 500, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
     { label: 'Kundehenvendelser & præsentation', value: 'Mellem', price: 1500, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
     { label: 'Større avanceret hjemmeside', value: 'Stor', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 350, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 350, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
   ];
 
   const sizeOptions = [
-    { label: 'One-Pager (1 side)', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: '2-3 Sider', value: 'Mellem', price: 750, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: '5-10 Sider', value: 'Stor', price: 1500, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: '10+ Sider', value: 'Mega', price: 350, lordicon: 'https://cdn.lordicon.com/rjpgjson.json' },
+    { label: 'One-Pager (1 side)', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/gvaavcmy.json' },
+    { label: '2-3 Sider', value: 'Mellem', price: 750, lordicon: 'https://cdn.lordicon.com/keqtrnri.json' },
+    { label: '5-10 Sider', value: 'Stor', price: 1500, lordicon: 'https://cdn.lordicon.com/wezpwbvv.json' },
+    { label: '10+ Sider', value: 'Mega', price: 350, lordicon: 'https://cdn.lordicon.com/ykbtejih.json' },
   ];
 
   const languageOptions = [
-    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/skayvuob.json' },
     { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
   ];
 
   const brandingOptions = [
-    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wvsldibu.json' },
     { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
   ];
 
   const webdesignOptions = [
-    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
-    { label: 'Delvist klar', value: 'Delvist klar', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/cgzlioyf.json' },
+    { label: 'Delvist klar', value: 'Delvist klar', price: 0, lordicon: 'https://cdn.lordicon.com/wuvorxbv.json' },
     { label: 'Nej, jeg har alt klar', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
   ];
 
   const contentOptions = [
-    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/wzwygmng.json' },
-    { label: 'Jeg leverer enkelte tekster og billeder', value: 'Delvist klar', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Nej, jeg leverer alt', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/athelfnc.json' },
+    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/cgzlioyf.json' },
+    { label: 'Jeg leverer enkelte tekster og billeder', value: 'Delvist klar', price: 0, lordicon: 'https://cdn.lordicon.com/wvizcxne.json' },
+    { label: 'Nej, jeg leverer alt', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/loscgwts.json' },
+    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
   ];
 
   const renderStartComponent = () => {
@@ -154,7 +154,7 @@ const App: React.FC = () => {
           <p className="mb-10 opacity-65">Prøv vores prisberegner, og få et estimat på hvad din hjemmeside vil koste at udvikle. <br />
             Den præsenterede pris er vejledende, og kan variere efter specifikke funktioner og anmodninger.</p>
           <button
-            className="bg-gray-700 text-white text-3xl font-bold py-7 px-32  focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
+            className="bg-gray-700 text-white text-xl sm:text-2xl md:text-3xl font-bold py-5 sm:py-5 md:py-7 px-20 sm:px-20 md:px-32 focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
             onClick={handleStart}
           >
             Start nu
