@@ -110,7 +110,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
-                        <label className="block text-white text-m font-bold mb-2 text-left" htmlFor="email">
+                        <label className="block tracking-wide text-white text-m font-bold mb-2 text-left" htmlFor="email">
                             E-mail <span className="text-red-500">*</span>
                         </label>
                         <input
