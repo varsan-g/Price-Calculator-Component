@@ -91,8 +91,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <form onSubmit={handleSubmit} className="w-full max-w-lg p-4">
-                <div className="flex flex-wrap -mx-3 mb-6">
+            <form onSubmit={handleSubmit} className="w-full max-w-lg">
+                <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                         <label className="block tracking-wide text-white text-m font-bold mb-2 text-left" htmlFor="name">
                             Navn <span className="text-red-500">*</span>
@@ -108,7 +108,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                         />
                     </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                         <label className="block text-white text-m font-bold mb-2 text-left" htmlFor="email">
                             E-mail <span className="text-red-500">*</span>
@@ -124,7 +124,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                         />
                     </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                         <label className="block tracking-wide text-white text-m font-bold mb-2 text-left" htmlFor="phone">
                             Telefonnummer
@@ -139,7 +139,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                         />
                     </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6 mt-14">
+                <div className="flex flex-wrap -mx-3 mb-4 mt-14">
                     <div className="w-full px-4">
                         <button
                             className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-12 rounded focus:outline-none focus:shadow-outline"
