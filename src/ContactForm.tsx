@@ -78,7 +78,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                     hvor du vil have mulighed for at tage næste skridt.
                 </p>
                 <button
-                    className="bg-[#080833] hover:bg-[#1B6BE4] text-white font-bold py-3 px-16 rounded-xl focus:outline-none focus:shadow-outline"
+                    className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-16 rounded-xl focus:outline-none focus:shadow-outline"
                     onClick={onReset}
                 >
                     Start forfra
@@ -98,7 +98,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                             Navn <span className="text-red-500">*</span>
                         </label>
                         <input
-                            className="appearance-none block w-full bg-[gray-900] text-white border border-gray-600 rounded-xl py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"
+                            className="appearance-none block w-full bg-gray-900 text-white border border-gray-600 rounded-xl py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-700"
                             id="name"
                             type="text"
                             placeholder="Jens Jensen"
@@ -142,7 +142,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, total, sel
                 <div className="flex flex-wrap -mx-3 mb-4 mt-14">
                     <div className="w-full px-4">
                         <button
-                            className="bg-[#080833] hover:bg-[#1B6BE4] text-white font-bold py-3 px-12 rounded-xl focus:outline-none focus:shadow-outline"
+                            className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-12 rounded-xl focus:outline-none focus:shadow-outline"
                             type="submit"
                         >
                             BEREGN PRISEN
