@@ -9,7 +9,7 @@
 }
 
 .hover-gradient:hover {
-    background-image: radial-gradient(circle at center, #080833, #1B6BE4);
+    background-image: radial-gradient(circle at center, #04133c, #052162);
 }
 
 body {
