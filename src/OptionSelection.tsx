@@ -4,7 +4,6 @@ import { defineElement } from '@lordicon/element';
 
 defineElement(lottie.loadAnimation);
 
-
 declare namespace JSX {
     interface IntrinsicElements {
         'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
@@ -20,6 +19,7 @@ declare namespace JSX {
 
 interface Option {
     label: string;
+    shortLabel?: string; // Make shortLabel optional
     value: string;
     price: number;
     lordicon: string;
@@ -27,32 +27,41 @@ interface Option {
 
 interface OptionSelectionProps {
     title: string;
+    subtitle: string;
     options: Option[];
     onSelect: (value: string, price: number) => void;
 }
 
-const OptionSelection: React.FC<OptionSelectionProps> = ({ title, options, onSelect }) => {
+const OptionSelection: React.FC<OptionSelectionProps> = ({ title, subtitle, options, onSelect }) => {
+    const isTwoOptions = options.length === 2;
+    const isThreeOptions = options.length === 3;
+    const isFourOptions = options.length === 4;
+
     return (
         <div>
-            <h1 className="text-2xl font-bold mt-16 mb-20 text-white">{title}</h1>
-            <div className="flex justify-center flex-wrap">
-                {options.map((option) => (
+            <h1 className="text-2xl font-bold mt-16 mb-4 text-white">{title}</h1>
+            <h2 className="text-xl font-light mb-16 text-white">{subtitle}</h2>
+            <div className={`grid gap-4 ${isTwoOptions ? 'grid-cols-2 md:grid-cols-2 lg:grid-cols-2 justify-center' : ''} ${isThreeOptions ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-3' : ''} ${isFourOptions ? 'grid-cols-2 md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'}`}>
+                {options.map((option, index) => (
                     <div
                         key={option.value}
-                        className="flex-auto min-w-50 max-w-full px-4 mb-10 text-center"
-                        style={{ flexBasis: `calc(${100 / options.length}% - 1rem)` }}
+                        className={`flex-auto text-center ${isThreeOptions && index === 2 ? 'col-span-2 md:col-span-1 lg:col-span-1' : ''} ${isFourOptions && index >= 2 ? 'col-span-1 md:col-span-1' : ''}`}
                         onClick={() => onSelect(option.value, option.price)}
                     >
-                        <div className="rounded-3xl flex items-align justify-center shadow-md cursor-pointer p-10 text-white hover-gradient" style={{ backgroundColor: '#0e0e0e', height: 'auto' }}>
+                        <div className="rounded-3xl flex items-center justify-center shadow-md cursor-pointer p-4 md:p-8 lg:p-10 text-white hover-gradient" style={{ backgroundColor: '#0e0e0e', height: 'auto' }}>
                             <lord-icon
                                 src={option.lordicon}
                                 trigger="hover"
                                 stroke="regular"
                                 colors="primary:#ffffff,secondary:#ffffff"
-                                style={{ width: '80px', height: '80px' }}
+                                style={{ width: '60px', height: '60px' }} // Default size
+                                className="md:w-16 md:h-16 lg:w-20 lg:h-20" // Larger size on medium and up screens
                             ></lord-icon>
                         </div>
-                        <p className="text-xl font-light mt-4">{option.label}</p>
+                        <p className="text-base font-light mt-2 md:text-lg md:mt-3 lg:text-xl lg:mt-4">
+                            <span className="block md:hidden">{option.shortLabel || option.label}</span>
+                            <span className="hidden md:block">{option.label}</span>
+                        </p>
                     </div>
                 ))}
             </div>

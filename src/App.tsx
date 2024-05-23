@@ -1,7 +1,7 @@
-// src/App.tsx
 import React, { useState } from 'react';
 import OptionSelection from './OptionSelection';
 import ContactForm from './ContactForm';
+import ProgressBar from './ProgressBar';
 import 'lord-icon-element';
 
 type Step = 'start' | 'type' | 'design' | 'size' | 'language' | 'branding' | 'webdesign' | 'content' | 'contact';
@@ -27,59 +27,21 @@ const App: React.FC = () => {
     webdesign: '',
     content: '',
   });
-
   const [total, setTotal] = useState<number>(0);
   const totalSteps = 7;
 
-  const handleStart = () => {
-    setStep('type');
-  };
+  const handleStart = () => setStep('type');
 
   const getCurrentStepNumber = (): number => {
     const stepOrder: Step[] = ['type', 'design', 'size', 'language', 'branding', 'webdesign', 'content'];
     return stepOrder.indexOf(step) + 1;
   };
 
-  const handleTypeSelect = (type: string, price: number) => {
-    setSelection({ ...selection, type });
-    setTotal(total + price);
-    setStep('design');
-  };
-
-  const handleDesignSelect = (design: string, price: number) => {
-    setSelection({ ...selection, design });
-    setTotal(total + price);
-    setStep('size');
-  };
-
-  const handleSizeSelect = (size: string, price: number) => {
-    setSelection({ ...selection, size });
-    setTotal(total + price);
-    setStep('language');
-  };
-
-  const handleLanguageSelect = (value: string, price: number) => {
-    setSelection({ ...selection, language: value });
-    setTotal(total + price);
-    setStep('branding');
-  };
-
-  const handleBrandingSelect = (value: string, price: number) => {
-    setSelection({ ...selection, branding: value });
-    setTotal(total + price);
-    setStep('webdesign');
-  };
-
-  const handleWebdesignSelect = (value: string, price: number) => {
-    setSelection({ ...selection, webdesign: value });
-    setTotal(total + price);
-    setStep('content');
-  };
-
-  const handleContentSelect = (value: string, price: number) => {
-    setSelection({ ...selection, content: value });
-    setTotal(total + price);
-    setStep('contact');
+  const handleOptionSelect = (field: keyof Selection, value: string, price: number) => {
+    setSelection({ ...selection, [field]: value });
+    setTotal((prevTotal) => prevTotal + price);
+    const nextStep: Step[] = ['type', 'design', 'size', 'language', 'branding', 'webdesign', 'content', 'contact'];
+    setStep(nextStep[nextStep.indexOf(step) + 1]);
   };
 
   const handleReset = () => {
@@ -92,127 +54,151 @@ const App: React.FC = () => {
     console.log(contactDetails);
   };
 
-  const typeOptions = [
-    { label: 'Ny hjemmeside', value: 'NewSite', price: 3500, lordicon: 'https://cdn.lordicon.com/fzfkoxxo.json' },
-    { label: 'Opdatering af eksisterende hjemmeside', value: 'UpdateSite', price: 0, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
-  ];
-
-  const designOptions = [
-    { label: 'Simpel præsentation', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
-    { label: 'Kundehenvendelser & præsentation', value: 'Mellem', price: 250, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
-    { label: 'Større avanceret hjemmeside', value: 'Stor', price: 1000, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 625, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
-  ];
-
-  const sizeOptions = [
-    { label: 'One-Pager (1 side)', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/gvaavcmy.json' },
-    { label: '2-3 Sider', value: 'Mellem', price: 500, lordicon: 'https://cdn.lordicon.com/keqtrnri.json' },
-    { label: '5-10 Sider', value: 'Stor', price: 2000, lordicon: 'https://cdn.lordicon.com/wezpwbvv.json' },
-    { label: '10+ Sider', value: 'Mega', price: 5000, lordicon: 'https://cdn.lordicon.com/ykbtejih.json' },
-  ];
-
-  const languageOptions = [
-    { label: 'Ja', value: 'Ja', price: 500, lordicon: 'https://cdn.lordicon.com/skayvuob.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
-  ];
-
-  const brandingOptions = [
-    { label: 'Ja', value: 'Ja', price: 1500, lordicon: 'https://cdn.lordicon.com/wvsldibu.json' },
-    { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
-  ];
-
-  const webdesignOptions = [
-    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/cgzlioyf.json' },
-    { label: 'Delvist klar', value: 'Delvist klar', price: 500, lordicon: 'https://cdn.lordicon.com/wuvorxbv.json' },
-    { label: 'Nej, jeg har alt klar', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
-  ];
-
-  const contentOptions = [
-    { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/cgzlioyf.json' },
-    { label: 'Jeg leverer enkelte tekster og billeder', value: 'Delvist klar', price: 500, lordicon: 'https://cdn.lordicon.com/wvizcxne.json' },
-    { label: 'Nej, jeg leverer alt', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/loscgwts.json' },
-    { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
-  ];
-
-  const renderStartComponent = () => {
-    if (step === 'start') {
-      return (
-        <div className="text-center flex flex-col items-center">
-          <div className="mb-8">
-            <lord-icon
-              src="https://cdn.lordicon.com/wzwygmng.json"
-              trigger="in"
-              stroke="bold"
-              colors="primary:#ffffff,secondary:#ffffff"
-              style={{ width: '80px', height: '80px' }}
-            ></lord-icon>
-          </div>
-          <h1 className="text-3xl font-bold mb-8">Få et prisestimat på din drømmehjemmeside</h1>
-          <p className="mb-10 opacity-65">Prøv vores prisberegner, og få et estimat på hvad din hjemmeside vil koste at udvikle. <br />
-            Den præsenterede pris er vejledende, og kan variere efter specifikke funktioner og anmodninger.</p>
-          <button
-            className="bg-gray-700 text-white text-xl sm:text-2xl md:text-3xl font-bold py-5 sm:py-5 md:py-7 px-20 sm:px-20 md:px-32 focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
-            onClick={handleStart}
-          >
-            Start nu
-          </button>
-          <div className="mt-4 opacity-40 flex items-center justify-center">
-            <lord-icon
-              src="https://cdn.lordicon.com/qvyppzqz.json"
-              trigger="loop"
-              colors="primary:#ffffff,secondary:#ffffff"
-              style={{ width: '25px', height: '25px' }}
-            ></lord-icon>
-            <p className="ml-1">Tager kun 1-2 minutter</p>
-          </div>
-        </div>
-      );
+  const handleBack = () => {
+    const stepOrder: Step[] = ['type', 'design', 'size', 'language', 'branding', 'webdesign', 'content', 'contact'];
+    const currentStepIndex = stepOrder.indexOf(step);
+    if (currentStepIndex > 0) {
+      setStep(stepOrder[currentStepIndex - 1]);
+    } else {
+      setStep('start');
     }
-    return null;
   };
 
+  const options = {
+    type: [
+      { label: 'En ny hjemmeside', value: 'NewSite', price: 3500, lordicon: 'https://cdn.lordicon.com/fzfkoxxo.json' },
+      { label: 'Opdatering af eksisterende hjemmeside', shortLabel: 'Opdatering af en eksisterende side', value: 'UpdateSite', price: 0, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
+    ],
+    design: [
+      { label: 'Simpel præsentation', shortLabel: 'Simepl Visitkort side', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
+      { label: 'Kundehenvendelser & præsentation', shortLabel: 'For at skaffe nye kunder', value: 'Mellem', price: 250, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
+      { label: 'Større avanceret hjemmeside', shortLabel: 'Det er en større Avanceret side', value: 'Stor', price: 1000, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
+      { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 625, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
+    ],
+    size: [
+      { label: 'One-Pager (1 side)', shortLabel: '1 Side', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/gvaavcmy.json' },
+      { label: '2-3 Sider', value: 'Mellem', price: 500, lordicon: 'https://cdn.lordicon.com/keqtrnri.json' },
+      { label: '5-10 Sider', value: 'Stor', price: 2000, lordicon: 'https://cdn.lordicon.com/wezpwbvv.json' },
+      { label: '10+ Sider', value: 'Mega', price: 5000, lordicon: 'https://cdn.lordicon.com/ykbtejih.json' },
+    ],
+    language: [
+      { label: 'Ja', value: 'Ja', price: 500, lordicon: 'https://cdn.lordicon.com/skayvuob.json' },
+      { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+      { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
+    ],
+    branding: [
+      { label: 'Ja', value: 'Ja', price: 1500, lordicon: 'https://cdn.lordicon.com/wvsldibu.json' },
+      { label: 'Nej', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+      { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
+    ],
+    webdesign: [
+      { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/cgzlioyf.json' },
+      { label: 'Delvist klar', value: 'Delvist klar', price: 500, lordicon: 'https://cdn.lordicon.com/wuvorxbv.json' },
+      { label: 'Nej, jeg har alt klar', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/rmkpgtpt.json' },
+      { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
+    ],
+    content: [
+      { label: 'Ja', value: 'Ja', price: 1000, lordicon: 'https://cdn.lordicon.com/cgzlioyf.json' },
+      { label: 'Jeg leverer enkelte tekster og billeder', value: 'Delvist klar', price: 500, lordicon: 'https://cdn.lordicon.com/wvizcxne.json' },
+      { label: 'Nej, jeg leverer alt', value: 'Nej', price: 0, lordicon: 'https://cdn.lordicon.com/loscgwts.json' },
+      { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 250, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
+    ],
+  };
+
+  const subtitles = {
+    type: "Skal vi bygge en helt ny side til dig, eller har du allerede en hjemmeside?",
+    design: "Skal den bruges som et visitkort, eller skal den bruges til at skaffe kunder?",
+    size: "Det kan være en forside, en 'Om os' side, en 'Kontakt os' side osv.",
+    language: "Så den samme side er oversat til andre sprog.",
+    branding: "Dit logo og din branding er vigtig, så din virksomhed nemmere bliver genkendt af dine kunder. ",
+    webdesign: "Vi designer hele siden for dig, så den passer til din virksomhed og dit produkt.",
+    content: "Vi har skarpe copywriters og har et hold af fotografer, der kan hjælpe dig.",
+  };
+
+  const renderStartComponent = () => {
+    if (step !== 'start') return null;
+    return (
+      <div className="text-center flex flex-col items-center">
+        <div className="mb-8">
+          <lord-icon
+            src="https://cdn.lordicon.com/wzwygmng.json"
+            trigger="in"
+            stroke="bold"
+            colors="primary:#ffffff,secondary:#ffffff"
+            style={{ width: '80px', height: '80px' }}
+          ></lord-icon>
+        </div>
+        <h1 className="text-3xl font-bold mb-8">Få et prisestimat på din drømmehjemmeside</h1>
+        <p className="mb-10 opacity-65">
+          Prøv vores prisberegner, og få et estimat på hvad din hjemmeside vil koste at udvikle. <br />
+          Den præsenterede pris er vejledende, og kan variere efter specifikke funktioner og anmodninger.
+        </p>
+        <button
+          className="bg-gray-700 text-white text-xl sm:text-2xl md:text-3xl font-bold py-5 sm:py-5 md:py-7 px-20 sm:px-20 md:px-32 focus:outline-none focus:shadow-outline hover-gradient rounded-2xl"
+          onClick={handleStart}
+        >
+          Start nu
+        </button>
+        <div className="mt-4 opacity-40 flex items-center justify-center">
+          <lord-icon
+            src="https://cdn.lordicon.com/qvyppzqz.json"
+            trigger="loop"
+            colors="primary:#ffffff,secondary:#ffffff"
+            style={{ width: '25px', height: '25px' }}
+          ></lord-icon>
+          <p className="ml-1">Tager kun 1-2 minutter</p>
+        </div>
+      </div>
+    );
+  };
 
   const renderCurrentStep = () => {
-
     switch (step) {
       case 'type':
-        return <OptionSelection title="Hvad skal du bruge?" options={typeOptions} onSelect={handleTypeSelect} />;
+        return <OptionSelection title="Hvad skal du bruge?" subtitle={subtitles.type} options={options.type} onSelect={(value, price) => handleOptionSelect('type', value, price)} />;
       case 'design':
-        return <OptionSelection title="Hvad er formålet med siden?" options={designOptions} onSelect={handleDesignSelect} />;
+        return <OptionSelection title="Hvad er formålet med siden?" subtitle={subtitles.design} options={options.design} onSelect={(value, price) => handleOptionSelect('design', value, price)} />;
       case 'size':
-        return <OptionSelection title="Hvor mange sider skal du bruge?" options={sizeOptions} onSelect={handleSizeSelect} />;
+        return <OptionSelection title="Hvor mange sider skal du bruge?" subtitle={subtitles.size} options={options.size} onSelect={(value, price) => handleOptionSelect('size', value, price)} />;
       case 'language':
-        return <OptionSelection title="Skal hjemmesiden kunne bruges på flere sprog?" options={languageOptions} onSelect={handleLanguageSelect} />;
+        return <OptionSelection title="Skal hjemmesiden kunne bruges på flere sprog?" subtitle={subtitles.language} options={options.language} onSelect={(value, price) => handleOptionSelect('language', value, price)} />;
       case 'branding':
-        return <OptionSelection title="Skal vi stå for logo og branding?" options={brandingOptions} onSelect={handleBrandingSelect} />;
+        return <OptionSelection title="Skal vi stå for logo og branding?" subtitle={subtitles.branding} options={options.branding} onSelect={(value, price) => handleOptionSelect('branding', value, price)} />;
       case 'webdesign':
-        return <OptionSelection title="Skal vi stå for design af hjemmesiden?" options={webdesignOptions} onSelect={handleWebdesignSelect} />;
+        return <OptionSelection title="Skal vi stå for design af hjemmesiden?" subtitle={subtitles.webdesign} options={options.webdesign} onSelect={(value, price) => handleOptionSelect('webdesign', value, price)} />;
       case 'content':
-        return <OptionSelection title="Skal vi stå for tekst og billeder på hjemmesiden?" options={contentOptions} onSelect={handleContentSelect} />;
+        return <OptionSelection title="Skal vi stå for tekst og billeder på hjemmesiden?" subtitle={subtitles.content} options={options.content} onSelect={(value, price) => handleOptionSelect('content', value, price)} />;
       case 'contact':
-        return <ContactForm onSubmit={handleContactFormSubmit} selection={selection} total={total} onReset={handleReset} />;
+        return <ContactForm onSubmit={handleContactFormSubmit} selection={selection} total={total} onReset={handleReset} onBack={handleBack} />;
       default:
         return null;
     }
   };
 
-
-
   return (
-    <div className="flex items-start justify-center h-screen text-white pt-2" style={{ backgroundColor: 'transparent' }}>
-      <div className="p-12 rounded shadow text-center w-5/6 flex-col items-center" style={{ backgroundColor: 'transparent' }}>
-        <div className="mb-8">
-          {step !== 'start' && step !== 'contact' && (
-            <p className="text-lg font-semibold">
-              {getCurrentStepNumber()}/{totalSteps}
-            </p>
-          )}
-        </div>
+    <div className="flex items-center justify-center min-h-screen text-white pt-2" style={{ backgroundColor: 'transparent' }}>
+      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 flex-col items-center" style={{ backgroundColor: 'transparent' }}>
+        {step !== 'start' && step !== 'contact' && (
+          <ProgressBar currentStep={getCurrentStepNumber()} totalSteps={totalSteps} />
+        )}
         {renderStartComponent()}
         {renderCurrentStep()}
+        {step !== 'start' && step !== 'contact' && (
+          <div className="flex justify-center mt-8">
+            <button
+              className=" hover-gradient py-2 px-4 rounded-xl mt-8 flex items-center justify-center"
+              onClick={handleBack}
+            >
+              <lord-icon
+                src="https://cdn.lordicon.com/bvcynjpl.json"
+                trigger="hover"
+                colors="primary:#ffffff,secondary:#ffffff"
+                stroke="bold"
+                style={{ width: '40px', height: '40px' }}
+              ></lord-icon>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
