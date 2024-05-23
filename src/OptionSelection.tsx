@@ -37,31 +37,28 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, subtitle, opti
         <div>
             <h1 className="text-2xl font-bold mt-16 mb-4 text-white">{title}</h1>
             <h2 className="text-xl font-light mb-16 text-white">{subtitle}</h2>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex justify-center flex-wrap">
                 {options.map((option) => (
                     <div
                         key={option.value}
-                        className="flex-auto text-center"
+                        className="flex-auto min-w-50 max-w-full px-2 mb-2 text-center" // Changed mb-10 to mb-4
+                        style={{ flexBasis: `calc(${100 / options.length}% - 1rem)` }}
                         onClick={() => onSelect(option.value, option.price)}
-                        style={{ flexBasis: 'calc(100% / 2 - 1rem)', maxWidth: 'calc(100% / 2 - 1rem)' }} // Ensure items are 2 per row by default
                     >
-                        <div className="rounded-3xl flex items-center justify-center shadow-md cursor-pointer p-4 md:p-8 lg:p-10 text-white hover-gradient" style={{ backgroundColor: '#0e0e0e', height: 'auto' }}>
+                        <div className="rounded-3xl flex items-align justify-center shadow-md cursor-pointer p-8 text-white hover-gradient" style={{ backgroundColor: '#0e0e0e', height: 'auto' }}>
                             <lord-icon
                                 src={option.lordicon}
                                 trigger="hover"
                                 stroke="regular"
                                 colors="primary:#ffffff,secondary:#ffffff"
-                                style={{ width: '60px', height: '60px' }} // Default size
-                                className="md:w-16 md:h-16 lg:w-20 lg:h-20" // Larger size on medium and up screens
+                                style={{ width: '80px', height: '80px' }}
                             ></lord-icon>
                         </div>
-                        <p className="text-base font-light mt-2 md:text-lg md:mt-3 lg:text-xl lg:mt-4">
-                            <span className="block md:hidden">{option.shortLabel || option.label}</span>
-                            <span className="hidden md:block">{option.label}</span>
-                        </p>
+                        <p className="text-xl font-light mt-4">{option.label}</p>
                     </div>
                 ))}
             </div>
+
         </div>
     );
 };
