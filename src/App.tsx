@@ -177,7 +177,7 @@ const App: React.FC = () => {
 
   return (
     <div className="h-screen text-white flex flex-col" style={{ backgroundColor: 'transparent' }}>
-      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 max-w-5xl mx-auto flex flex-col flex-grow justify-start" style={{ backgroundColor: 'transparent' }}>
+      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 max-w-6xl mx-auto flex flex-col flex-grow justify-start" style={{ backgroundColor: 'transparent' }}>
         {step !== 'start' && step !== 'contact' && (
           <div className="w-full transparent p-2">
             <ProgressBar currentStep={getCurrentStepNumber()} totalSteps={totalSteps} />
