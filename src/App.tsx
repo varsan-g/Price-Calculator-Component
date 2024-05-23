@@ -186,25 +186,26 @@ const App: React.FC = () => {
         <div className="flex-grow flex flex-col justify-start">
           {renderStartComponent()}
           {renderCurrentStep()}
+          {step !== 'start' && step !== 'contact' && (
+            <div className="flex justify-center mt-2">
+              <button
+                className="hover-gradient py-2 px-4 rounded-xl flex items-center justify-center"
+                onClick={handleBack}
+              >
+                <lord-icon
+                  src="https://cdn.lordicon.com/bvcynjpl.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
+                  stroke="bold"
+                  style={{ width: '40px', height: '40px' }}
+                ></lord-icon>
+              </button>
+            </div>
+          )}
         </div>
-        {step !== 'start' && step !== 'contact' && (
-          <div className="flex justify-center mt-8">
-            <button
-              className="hover-gradient py-2 px-4 rounded-xl flex items-center justify-center"
-              onClick={handleBack}
-            >
-              <lord-icon
-                src="https://cdn.lordicon.com/bvcynjpl.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                stroke="bold"
-                style={{ width: '40px', height: '40px' }}
-              ></lord-icon>
-            </button>
-          </div>
-        )}
       </div>
     </div>
+
 
 
 
