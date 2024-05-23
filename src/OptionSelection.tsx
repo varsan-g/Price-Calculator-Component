@@ -54,8 +54,8 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, subtitle, opti
                                 trigger="hover"
                                 stroke="regular"
                                 colors="primary:#ffffff,secondary:#ffffff"
-                                style={{ width: '60px', height: '60px' }} // Default size
-                                className="md:w-16 md:h-16 lg:w-20 lg:h-20" // Larger size on medium and up screens
+                                style={{ width: '60px', height: '60px' }}
+                                className="md:w-16 md:h-16 lg:w-20 lg:h-20"
                             ></lord-icon>
                         </div>
                         <p className="text-base font-light mt-2 md:text-lg md:mt-3 lg:text-xl lg:mt-4">
