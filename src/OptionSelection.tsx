@@ -51,7 +51,7 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, subtitle, opti
                                 trigger="hover"
                                 stroke="regular"
                                 colors="primary:#ffffff,secondary:#ffffff"
-                                style={{ width: '80px', height: '80px' }}
+                                style={{ width: '50px', height: '50px' }}
                             ></lord-icon>
                         </div>
                         <p className="text-xl font-light mt-4">{option.label}</p>
