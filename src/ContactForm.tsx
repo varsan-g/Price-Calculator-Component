@@ -146,7 +146,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, onBack, to
                         ></textarea>
                     </div>
                 </div>
-                <div className="flex justify-center items-center space-x-4 mt-14 px-3">
+                <div className="flex justify-center items-center space-x-4 mt-4 px-3">
                     <button
                         className="hover-gradient font-bold py-2 px-4 rounded-xl flex items-center justify-center"
                         onClick={onBack}
@@ -162,7 +162,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, onReset, onBack, to
                         ></lord-icon>
                     </button>
                     <button
-                        className="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 px-12 rounded-xl focus:outline-none focus:shadow-outline"
+                        className="bg-blue-700 hover:bg-blue-600 text-white font-bold px-12 rounded-xl focus:outline-none focus:shadow-outline"
                         type="submit"
                         style={{ height: '56px' }}
                     >

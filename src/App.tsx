@@ -70,7 +70,7 @@ const App: React.FC = () => {
       { label: 'Opdatering af eksisterende hjemmeside', shortLabel: 'Opdatering af en eksisterende side', value: 'UpdateSite', price: 0, lordicon: 'https://cdn.lordicon.com/kmifwsos.json' },
     ],
     design: [
-      { label: 'Simpel præsentation', shortLabel: 'Simepl Visitkort side', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
+      { label: 'Simpel præsentation', shortLabel: 'Simpel Visitkort side', value: 'Lille', price: 0, lordicon: 'https://cdn.lordicon.com/ocqzmzvc.json' },
       { label: 'Kundehenvendelser & præsentation', shortLabel: 'For at skaffe nye kunder', value: 'Mellem', price: 250, lordicon: 'https://cdn.lordicon.com/piwupaqb.json' },
       { label: 'Større avanceret hjemmeside', shortLabel: 'Det er en større Avanceret side', value: 'Stor', price: 1000, lordicon: 'https://cdn.lordicon.com/oqrxcabg.json' },
       { label: 'Jeg ved det ikke endnu', value: 'Ved ikke', price: 625, lordicon: 'https://cdn.lordicon.com/getzhpti.json' },
@@ -177,7 +177,7 @@ const App: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen text-white pt-2" style={{ backgroundColor: 'transparent' }}>
-      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 flex-col items-center" style={{ backgroundColor: 'transparent' }}>
+      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 max-w-5xl flex flex-col items-center" style={{ backgroundColor: 'transparent' }}>
         {step !== 'start' && step !== 'contact' && (
           <ProgressBar currentStep={getCurrentStepNumber()} totalSteps={totalSteps} />
         )}
@@ -186,7 +186,7 @@ const App: React.FC = () => {
         {step !== 'start' && step !== 'contact' && (
           <div className="flex justify-center mt-8">
             <button
-              className=" hover-gradient py-2 px-4 rounded-xl mt-8 flex items-center justify-center"
+              className="hover-gradient py-2 px-4 rounded-xl mt-8 flex items-center justify-center"
               onClick={handleBack}
             >
               <lord-icon
