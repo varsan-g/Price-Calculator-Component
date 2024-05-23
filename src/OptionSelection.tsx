@@ -41,7 +41,7 @@ const OptionSelection: React.FC<OptionSelectionProps> = ({ title, subtitle, opti
                 {options.map((option) => (
                     <div
                         key={option.value}
-                        className="flex-auto min-w-50 max-w-full px-2 mb-2 text-center" // Changed mb-10 to mb-4
+                        className="flex-auto min-w-50 max-w-full px-2 mb-8 text-center"
                         style={{ flexBasis: `calc(${100 / options.length}% - 1rem)` }}
                         onClick={() => onSelect(option.value, option.price)}
                     >

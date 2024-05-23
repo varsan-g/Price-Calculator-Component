@@ -176,17 +176,21 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen text-white pt-2" style={{ backgroundColor: 'transparent' }}>
-      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 max-w-5xl flex flex-col items-center" style={{ backgroundColor: 'transparent' }}>
+    <div className="h-screen text-white flex flex-col" style={{ backgroundColor: 'transparent' }}>
+      <div className="p-4 sm:p-12 rounded shadow text-center w-full sm:w-5/6 max-w-5xl mx-auto flex flex-col flex-grow justify-start" style={{ backgroundColor: 'transparent' }}>
         {step !== 'start' && step !== 'contact' && (
-          <ProgressBar currentStep={getCurrentStepNumber()} totalSteps={totalSteps} />
+          <div className="w-full transparent p-4">
+            <ProgressBar currentStep={getCurrentStepNumber()} totalSteps={totalSteps} />
+          </div>
         )}
-        {renderStartComponent()}
-        {renderCurrentStep()}
+        <div className="flex-grow flex flex-col justify-start">
+          {renderStartComponent()}
+          {renderCurrentStep()}
+        </div>
         {step !== 'start' && step !== 'contact' && (
           <div className="flex justify-center mt-8">
             <button
-              className="hover-gradient py-2 px-4 rounded-xl mt-8 flex items-center justify-center"
+              className="hover-gradient py-2 px-4 rounded-xl flex items-center justify-center"
               onClick={handleBack}
             >
               <lord-icon
@@ -201,6 +205,9 @@ const App: React.FC = () => {
         )}
       </div>
     </div>
+
+
+
   );
 };
 
